@@ -1,67 +1,77 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Reportar Incidente</title>
+    <meta charset="UTF-8">
+    <title>Reportar Incidente</title>
 </head>
 
 <body>
 
 <header>
-<h1>Reporte de Incidentes</h1>
+    <h1>Reporte de Incidentes</h1>
 </header>
 
 <nav>
-<a href="index.html">Inicio</a> |
-<a href="reportar.html">Reportar</a> |
-<a href="tickets.html">Tickets</a>
+    <a href="index.html">Inicio</a> |
+    <a href="reportar.html">Reportar</a> |
+    <a href="tickets.html">Tickets</a>
 </nav>
 
 <main>
 
 <section>
 
-<h2>Nuevo Ticket</h2>
+    <h2>Nuevo Ticket</h2>
 
-<form>
+    <article>
+        <h3>Formulario de Registro</h3>
 
-<label>Título del incidente:</label><br>
-<input type="text" name="titulo"><br><br>
+        <form>
 
-<label>Categoría:</label><br>
+            <label for="titulo">Título del incidente:</label><br>
+            <input type="text" id="titulo" name="titulo"><br><br>
 
-<select name="categoria">
-<option>Red</option>
-<option>Hardware</option>
-<option>Software</option>
-</select>
+            <label for="categoria">Categoría:</label><br>
 
-<br><br>
+            <select id="categoria" name="categoria">
+                <option>Red</option>
+                <option>Hardware</option>
+                <option>Software</option>
+            </select>
 
-<label>Prioridad:</label><br>
+            <br><br>
 
-<input type="radio" name="prioridad"> Alta
-<input type="radio" name="prioridad"> Media
-<input type="radio" name="prioridad"> Baja
+            <label>Prioridad:</label><br>
 
-<br><br>
+            <input type="radio" id="alta" name="prioridad" value="Alta">
+            <label for="alta">Alta</label>
 
-<label>Descripción:</label><br>
+            <input type="radio" id="media" name="prioridad" value="Media">
+            <label for="media">Media</label>
 
-<textarea rows="5" cols="40"></textarea>
+            <input type="radio" id="baja" name="prioridad" value="Baja">
+            <label for="baja">Baja</label>
 
-<br><br>
+            <br><br>
 
-<input type="submit" value="Enviar Ticket">
+            <label for="descripcion">Descripción:</label><br>
 
-</form>
+            <textarea id="descripcion" name="descripcion" rows="5" cols="40"></textarea>
+
+            <br><br>
+
+            <input type="submit" value="Enviar Ticket">
+
+        </form>
+
+    </article>
 
 </section>
 
 </main>
 
 <footer>
-<p>Help Desk 2026</p>
+    <p>Help Desk 2026</p>
 </footer>
 
 </body>
