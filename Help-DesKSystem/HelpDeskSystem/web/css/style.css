@@ -1,0 +1,603 @@
+/*=============================
+    DESIGN SYSTEM HELP DESK
+==============================*/
+
+:root{
+
+    --color-primario:#198754;
+    --color-secundario:#495057;
+    --color-peligro:#dc3545;
+    --color-advertencia:#ffc107;
+    --color-fondo:#eef3f7;
+    --color-blanco:#ffffff;
+    --color-texto:#212529;
+
+    --radio:10px;
+
+}
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+body{
+
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background:var(--color-fondo);
+    color:var(--color-texto);
+
+}
+
+/*=============================
+HEADER
+==============================*/
+
+header{
+
+    background:var(--color-primario);
+    color:white;
+    text-align:center;
+    padding:25px;
+
+}
+
+header h1{
+
+    font-size:32px;
+
+}
+
+/*=============================
+NAV
+==============================*/
+
+nav{
+
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    background:#146c43;
+    padding:15px;
+
+}
+
+nav a{
+
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+
+}
+
+nav a:hover{
+
+    text-decoration:underline;
+
+}
+
+/*=============================
+MAIN
+==============================*/
+
+main{
+
+    width:90%;
+    margin:auto;
+    padding:30px 0;
+
+}
+
+section{
+
+    margin-bottom:40px;
+
+}
+
+h2{
+
+    margin-bottom:20px;
+    color:var(--color-primario);
+
+}
+
+/*=============================
+BOTONES
+==============================*/
+
+button{
+
+    cursor:pointer;
+    padding:12px 22px;
+    border:none;
+    border-radius:var(--radio);
+    margin:10px 10px 10px 0;
+    font-size:15px;
+
+}
+
+.btn-primary{
+
+    background:var(--color-primario);
+    color:white;
+
+}
+
+.btn-primary:hover{
+
+    background:#157347;
+
+}
+
+.btn-secondary{
+
+    background:var(--color-secundario);
+    color:white;
+
+}
+
+.btn-secondary:hover{
+
+    background:#343a40;
+
+}
+
+.btn-danger{
+
+    background:var(--color-peligro);
+    color:white;
+
+}
+
+.btn-danger:hover{
+
+    background:#bb2d3b;
+
+}
+
+/*=============================
+FORMULARIOS
+==============================*/
+
+input,
+select,
+textarea{
+
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    margin-bottom:20px;
+
+    border:1px solid #cccccc;
+    border-radius:var(--radio);
+
+    font-size:15px;
+
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+
+    outline:none;
+    border-color:var(--color-primario);
+
+    box-shadow:0px 0px 8px rgba(25,135,84,.4);
+
+}
+
+/*=============================
+CARD
+==============================*/
+
+.card{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:12px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+}
+
+.card h3{
+
+    margin-bottom:15px;
+
+}
+
+.card p{
+
+    margin-bottom:10px;
+
+}
+
+/*=============================
+BADGES
+==============================*/
+
+.badge{
+
+    display:inline-block;
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    font-weight:bold;
+
+    color:white;
+
+}
+
+.alta{
+
+    background:#dc3545;
+
+}
+
+.media{
+
+    background:#ffc107;
+
+    color:black;
+
+}
+
+.baja{
+
+    background:#198754;
+
+}
+
+/*=============================
+TABLAS
+==============================*/
+
+table{
+
+    width:100%;
+    border-collapse:collapse;
+
+}
+
+th{
+
+    background:var(--color-primario);
+    color:white;
+
+}
+
+th,
+td{
+
+    padding:12px;
+    border:1px solid #dddddd;
+    text-align:center;
+
+}
+
+tr:nth-child(even){
+
+    background:#f8f9fa;
+
+}
+
+/*=============================
+FOOTER
+==============================*/
+
+footer{
+
+    background:#146c43;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:30px;
+
+}
+
+/*=============================
+RESPONSIVE
+==============================*/
+
+@media(max-width:768px){
+
+    nav{
+
+        flex-direction:column;
+        align-items:center;
+
+    }
+
+    main{
+
+        width:95%;
+
+    }
+
+    button{
+
+        width:100%;
+
+    }
+
+    table{
+
+        display:block;
+        overflow-x:auto;
+
+    }
+
+}
+/* =====================================
+   ACTIVIDAD 6 - DISEÑO RESPONSIVE
+   FLEXBOX Y MEDIA QUERIES
+===================================== */
+
+/* Navegación adaptable */
+
+nav{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    margin:20px 0;
+
+}
+
+
+nav a{
+
+    text-decoration:none;
+
+    color:var(--color-primario);
+
+    font-weight:bold;
+
+}
+
+
+
+nav a:hover{
+
+    color:#59339d;
+
+}
+
+/* =====================================
+   DASHBOARD CON FLEXBOX
+===================================== */
+
+
+.dashboard{
+
+    display:flex;
+
+    gap:20px;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+.dashboard .card{
+
+    flex:1;
+
+    min-width:280px;
+
+}
+
+
+/* =====================================
+   FORMULARIO RESPONSIVE
+===================================== */
+
+
+.form-ticket{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+
+
+.prioridad{
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+
+/* =====================================
+   TABLA RESPONSIVE
+===================================== */
+
+
+.table-container{
+
+    width:100%;
+
+    overflow-x:auto;
+
+}
+
+
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:20px;
+
+}
+
+
+
+th,
+td{
+
+    padding:12px;
+
+    border-bottom:1px solid #ddd;
+
+    text-align:left;
+
+}
+
+
+
+th{
+
+    background:var(--color-primario);
+
+    color:white;
+
+}
+
+
+
+tr:hover{
+
+    background:#f1f1f1;
+
+}
+
+
+/* =====================================
+   MEDIA QUERY TABLET
+===================================== */
+
+
+@media(max-width:768px){
+
+
+    body{
+
+        padding:20px;
+
+    }
+
+
+
+    nav{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+
+
+    .dashboard{
+
+        flex-direction:column;
+
+    }
+
+
+
+    .card{
+
+        width:100%;
+
+    }
+
+
+
+    .form-ticket{
+
+        width:100%;
+
+    }
+
+
+
+}
+
+/* =====================================
+   MEDIA QUERY CELULAR
+===================================== */
+
+
+@media(max-width:480px){
+
+
+    body{
+
+        padding:15px;
+
+    }
+
+
+
+    h1{
+
+        font-size:24px;
+
+    }
+
+
+
+    h2{
+
+        font-size:20px;
+
+    }
+
+
+
+    button,
+    input,
+    select,
+    textarea{
+
+        width:100%;
+
+    }
+
+
+
+    .prioridad{
+
+        flex-direction:column;
+
+    }
+
+
+
+    table{
+
+        font-size:14px;
+
+    }
+
+
+}

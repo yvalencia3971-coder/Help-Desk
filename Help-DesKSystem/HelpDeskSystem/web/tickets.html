@@ -1,73 +1,175 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
-    <title>Tickets</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tickets - Help Desk</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
 
+
 <header>
+
     <h1>Listado de Tickets</h1>
+
+    <p>Gestión y seguimiento de incidentes</p>
+
 </header>
 
+
 <nav>
+
     <a href="index.html">Inicio</a> |
     <a href="reportar.html">Reportar</a> |
     <a href="tickets.html">Tickets</a>
+
 </nav>
+
 
 <main>
 
-<section>
+<section class="card">
 
-    <h2>Tickets Registrados</h2>
+<h2>Tickets Registrados</h2>
 
-    <article>
+<article>
 
-        <h3>Listado General de Incidentes</h3>
+<h3>Listado General de Incidentes</h3>
 
-        <table>
+<div class="table-container">
 
-            <tr>
-                <th>ID</th>
-                <th>Título</th>
-                <th>Categoría</th>
-                <th>Estado</th>
-            </tr>
+<table class="table-responsive">
 
-            <tr>
-                <td>001</td>
-                <td>Fallo de red</td>
-                <td>Red</td>
-                <td>Abierto</td>
-            </tr>
 
-            <tr>
-                <td>002</td>
-                <td>Servidor apagado</td>
-                <td>Hardware</td>
-                <td>En Proceso</td>
-            </tr>
+<tr>
 
-            <tr>
-                <td>003</td>
-                <td>Error de aplicación</td>
-                <td>Software</td>
-                <td>Resuelto</td>
-            </tr>
+<th>ID</th>
 
-        </table>
+<th>Título</th>
 
-    </article>
+<th>Categoría</th>
+
+<th>Estado</th>
+
+</tr>
+
+
+<tr>
+
+<td>001</td>
+
+<td>Fallo de red</td>
+
+<td>Red</td>
+
+<td>
+
+<span class="badge badge-alta">
+
+Abierto
+
+</span>
+
+</td>
+
+
+</tr>
+
+<tr>
+
+<td>002</td>
+
+<td>Servidor apagado</td>
+
+<td>Hardware</td>
+
+<td>
+
+<span class="badge badge-media">
+
+En proceso
+
+</span>
+
+</td>
+
+
+</tr>
+
+
+<tr>
+
+<td>003</td>
+
+<td>Error de aplicación</td>
+
+<td>Software</td>
+
+
+<td>
+
+<span class="badge badge-baja">
+
+Resuelto
+
+</span>
+
+</td>
+
+
+</tr>
+
+
+</table>
+
+
+</div>
+
+
+</article>
 
 </section>
 
+
 </main>
 
+
+
 <footer>
-    <p>Help Desk 2026</p>
+
+
+<p>
+Universidad Técnica de Manabí
+</p>
+
+
+<p>
+Facultad de Ciencias Informáticas
+</p>
+
+
+<p>
+Tecnología de la Información
+</p>
+
+
+<p>
+Yumberlly Valencia
+</p>
+
+
+
 </footer>
 
+
 </body>
+
 </html>

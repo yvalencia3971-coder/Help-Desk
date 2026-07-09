@@ -1,53 +1,114 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
-    <title>Help Desk - Inicio</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Help Desk - Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
 
 <header>
+
     <h1>Sistema Help Desk</h1>
+
+    <p>Panel principal de gestión de incidentes</p>
+
 </header>
 
 <nav>
+
     <a href="index.html">Inicio</a> |
     <a href="reportar.html">Reportar Incidente</a> |
     <a href="tickets.html">Tickets</a>
+
 </nav>
 
-<main>
+<main class="dashboard">
 
-<section>
+<section class="card">
 
-    <h2>Bienvenido</h2>
+    <h2>Bienvenido al Sistema</h2>
 
-    <article>
-        <h3>Presentación del Sistema</h3>
-        <p>
-            Sistema de gestión de incidentes para infraestructura tecnológica.
-        </p>
-    </article>
+    <p>
+        Plataforma para la gestión y seguimiento de incidentes
+        tecnológicos de infraestructura.
+    </p>
+    <br>
+
+    <button class="btn-primary">
+        Crear Ticket
+    </button>
 
 </section>
 
-<section>
+<section class="card">
 
-    <h2>Resumen General</h2>
+    <h2>Resumen de Tickets</h2>
 
-    <article>
-        <h3>Estadísticas de Tickets</h3>
-        <p>Tickets abiertos: 15</p>
-        <p>Tickets resueltos: 40</p>
-    </article>
+    <p>
+        Tickets abiertos:
+        <span class="badge badge-alta">
+            15
+        </span>
+    </p>
+
+    <p>
+        Tickets en proceso:
+        <span class="badge badge-media">
+            20
+        </span>
+    </p>
+
+    <p>
+        Tickets resueltos:
+        <span class="badge badge-baja">
+            40
+        </span>
+    </p>
+
+</section>
+
+<section class="card">
+
+    <h2>Información del Sistema</h2>
+
+    <p>
+        Área:
+        Mesa de Ayuda TI
+    </p>
+
+
+    <p>
+        Estado:
+        <span class="badge badge-baja">
+            Operativo
+        </span>
+    </p>
 
 </section>
 
 </main>
 
+
 <footer>
-    <p>Universidad Técnica de Manabí - 2026</p>
+
+<p>Universidad Técnica de Manabí</p>
+
+<p>Facultad de Ciencias Informáticas</p>
+
+<p>Tecnología de la Información</p>
+
+<p>Yumberlly Valencia</p>
+
 </footer>
 
 </body>
+
 </html>

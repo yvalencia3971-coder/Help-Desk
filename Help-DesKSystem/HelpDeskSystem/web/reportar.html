@@ -1,78 +1,179 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
-    <title>Reportar Incidente</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reportar Incidente - Help Desk</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
+
 
 <body>
 
+
 <header>
+
     <h1>Reporte de Incidentes</h1>
+
+    <p>Registro de nuevos tickets</p>
+
 </header>
 
+
 <nav>
+
     <a href="index.html">Inicio</a> |
     <a href="reportar.html">Reportar</a> |
     <a href="tickets.html">Tickets</a>
+
 </nav>
+
 
 <main>
 
-<section>
+<section class="card">
 
-    <h2>Nuevo Ticket</h2>
+<h2>Nuevo Ticket</h2>
 
-    <article>
-        <h3>Formulario de Registro</h3>
 
-        <form>
+<article>
 
-            <label for="titulo">Título del incidente:</label><br>
-            <input type="text" id="titulo" name="titulo"><br><br>
+<h3>Formulario de Registro</h3>
 
-            <label for="categoria">Categoría:</label><br>
+<form class="form-ticket">
 
-            <select id="categoria" name="categoria">
-                <option>Red</option>
-                <option>Hardware</option>
-                <option>Software</option>
-            </select>
+<label for="titulo">
+Título del incidente:
+</label>
 
-            <br><br>
+<input 
+class="form-control"
+type="text"
+id="titulo"
+name="titulo"
+placeholder="Ingrese el título del problema">
 
-            <label>Prioridad:</label><br>
+<label for="categoria">
+Categoría:
+</label>
 
-            <input type="radio" id="alta" name="prioridad" value="Alta">
-            <label for="alta">Alta</label>
+<select 
+class="form-control"
+id="categoria"
+name="categoria">
 
-            <input type="radio" id="media" name="prioridad" value="Media">
-            <label for="media">Media</label>
+<option>
+Seleccione categoría
+</option>
 
-            <input type="radio" id="baja" name="prioridad" value="Baja">
-            <label for="baja">Baja</label>
+<option>
+Red
+</option>
 
-            <br><br>
+<option>
+Hardware
+</option>
 
-            <label for="descripcion">Descripción:</label><br>
+<option>
+Software
+</option>
 
-            <textarea id="descripcion" name="descripcion" rows="5" cols="40"></textarea>
 
-            <br><br>
+</select>
 
-            <input type="submit" value="Enviar Ticket">
+<label>
+Prioridad:
+</label>
 
-        </form>
+<div class="prioridad">
 
-    </article>
+<input 
+type="radio"
+id="alta"
+name="prioridad"
+value="Alta">
+
+<label for="alta">
+Alta
+</label>
+
+<input 
+type="radio"
+id="media"
+name="prioridad"
+value="Media">
+
+<label for="media">
+Media
+</label>
+
+<input 
+type="radio"
+id="baja"
+name="prioridad"
+value="Baja">
+
+<label for="baja">
+Baja
+</label>
+
+</div>
+
+
+<label for="descripcion">
+Descripción:
+</label>
+
+<textarea
+class="form-control"
+id="descripcion"
+name="descripcion"
+rows="5"
+placeholder="Describa el incidente">
+</textarea>
+
+<button 
+type="submit"
+class="btn-primary">
+
+Enviar Ticket
+
+</button>
+
+</form>
+
+</article>
 
 </section>
 
 </main>
 
 <footer>
-    <p>Help Desk 2026</p>
+
+<p>
+Universidad Técnica de Manabí
+</p>
+
+<p>
+Facultad de Ciencias Informáticas
+</p>
+
+<p>
+Tecnología de la Información
+</p>
+
+<p>
+Yumberlly Valencia
+</p>
+
 </footer>
 
 </body>
+
 </html>
