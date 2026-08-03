@@ -1,8 +1,8 @@
 package ec.edu.utm.Help_Desk_api.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
-
 
 @Entity
 public class HistorialTicket {
@@ -10,7 +10,6 @@ public class HistorialTicket {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
 
     private String estadoAnterior;
 
@@ -21,19 +20,18 @@ public class HistorialTicket {
     private LocalDateTime fecha;
 
 
+    @JsonIgnore
     @ManyToOne
-    @JoinColumn(name="ticket_id")
+    @JoinColumn(name = "ticket_id")
     private Ticket ticket;
 
 
-
-    public HistorialTicket(){
-
+    public HistorialTicket() {
     }
 
 
     @PrePersist
-    public void crearFecha(){
+    public void crearFecha() {
         fecha = LocalDateTime.now();
     }
 
@@ -41,7 +39,6 @@ public class HistorialTicket {
     public Long getId() {
         return id;
     }
-
 
     public void setId(Long id) {
         this.id = id;
@@ -52,7 +49,6 @@ public class HistorialTicket {
         return estadoAnterior;
     }
 
-
     public void setEstadoAnterior(String estadoAnterior) {
         this.estadoAnterior = estadoAnterior;
     }
@@ -61,7 +57,6 @@ public class HistorialTicket {
     public String getEstadoNuevo() {
         return estadoNuevo;
     }
-
 
     public void setEstadoNuevo(String estadoNuevo) {
         this.estadoNuevo = estadoNuevo;
@@ -72,7 +67,6 @@ public class HistorialTicket {
         return comentario;
     }
 
-
     public void setComentario(String comentario) {
         this.comentario = comentario;
     }
@@ -82,7 +76,6 @@ public class HistorialTicket {
         return fecha;
     }
 
-
     public void setFecha(LocalDateTime fecha) {
         this.fecha = fecha;
     }
@@ -91,7 +84,6 @@ public class HistorialTicket {
     public Ticket getTicket() {
         return ticket;
     }
-
 
     public void setTicket(Ticket ticket) {
         this.ticket = ticket;

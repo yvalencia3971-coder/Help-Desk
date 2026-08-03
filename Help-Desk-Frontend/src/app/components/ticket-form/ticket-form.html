@@ -1,0 +1,33 @@
+<h2>Registrar Ticket</h2>
+
+<input
+type="text"
+placeholder="Título"
+[(ngModel)]="ticket.titulo">
+
+<br><br>
+
+<input
+type="text"
+placeholder="Descripción"
+[(ngModel)]="ticket.descripcion">
+
+<br><br>
+
+<input
+type="text"
+placeholder="Categoría"
+[(ngModel)]="ticket.categoria">
+
+<br><br>
+
+<input
+type="text"
+placeholder="Prioridad"
+[(ngModel)]="ticket.prioridad">
+
+<br><br>
+
+<button (click)="guardar()">
+Guardar Ticket
+</button>

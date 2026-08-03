@@ -8,6 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/tickets")
+@CrossOrigin(origins = "http://localhost:4200")
 public class TicketController {
 
     private final TicketRepository repository;

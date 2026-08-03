@@ -1,0 +1,36 @@
+<h2>Lista de Tickets</h2>
+
+<table border="1" width="100%">
+
+<tr>
+
+<th>ID</th>
+<th>Título</th>
+<th>Categoría</th>
+<th>Prioridad</th>
+<th>Estado</th>
+<th>Acción</th>
+
+</tr>
+
+<tr *ngFor="let t of tickets">
+
+<td>{{t.id}}</td>
+<td>{{t.titulo}}</td>
+<td>{{t.categoria}}</td>
+<td>{{t.prioridad}}</td>
+<td>{{t.estado}}</td>
+
+<td>
+
+<button (click)="eliminar(t.id!)">
+
+Eliminar
+
+</button>
+
+</td>
+
+</tr>
+
+</table>
