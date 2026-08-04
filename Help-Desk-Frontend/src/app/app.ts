@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-
+import { Component, signal } from '@angular/core';
 import { TicketForm } from './components/ticket-form/ticket-form';
 import { TicketList } from './components/ticket-list/ticket-list';
+
 
 @Component({
   selector: 'app-root',
@@ -14,4 +14,7 @@ import { TicketList } from './components/ticket-list/ticket-list';
   styleUrl: './app.css'
 })
 export class App {
+
+  protected readonly title = signal('Help-Desk-Frontend');
+
 }

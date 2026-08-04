@@ -1,36 +1,59 @@
+<h1 style="color:rgb(255, 0, 179)"></h1>
 <h2>Lista de Tickets</h2>
 
-<table border="1" width="100%">
+<p>Total de tickets: {{ tickets.length }}</p>
 
-<tr>
+@if (tickets.length > 0) {
+<table class="tabla-tickets">
 
-<th>ID</th>
-<th>Título</th>
-<th>Categoría</th>
-<th>Prioridad</th>
-<th>Estado</th>
-<th>Acción</th>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Título</th>
+      <th>Descripción</th>
+      <th>Categoría</th>
+      <th>Prioridad</th>
+      <th>Estado</th>
+      <th>Acción</th>
+    </tr>
+  </thead>
 
-</tr>
 
-<tr *ngFor="let t of tickets">
+  <tbody>
 
-<td>{{t.id}}</td>
-<td>{{t.titulo}}</td>
-<td>{{t.categoria}}</td>
-<td>{{t.prioridad}}</td>
-<td>{{t.estado}}</td>
+    @for (ticket of tickets; track ticket.id) {
 
-<td>
+      <tr>
 
-<button (click)="eliminar(t.id!)">
+        <td>{{ ticket.id }}</td>
 
-Eliminar
+        <td>{{ ticket.titulo }}</td>
 
-</button>
+        <td>{{ ticket.descripcion }}</td>
 
-</td>
+        <td>{{ ticket.categoria }}</td>
 
-</tr>
+        <td>{{ ticket.prioridad }}</td>
+
+        <td>{{ ticket.estado }}</td>
+
+        <td>
+          <button 
+            (click)="eliminarTicket(ticket.id!)">
+            Eliminar
+          </button>
+        </td>
+
+      </tr>
+
+    }
+
+  </tbody>
 
 </table>
+}
+@else {
+
+<p>No existen tickets registrados.</p>
+
+}

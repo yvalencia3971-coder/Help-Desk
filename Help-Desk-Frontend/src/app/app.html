@@ -4,10 +4,14 @@
 
   <hr>
 
-  <app-ticket-form></app-ticket-form>
+ <app-ticket-form
+  (ticketCreado)="listaTickets.cargarTickets()">
+</app-ticket-form>
 
-  <br>
+<br>
 
-  <app-ticket-list></app-ticket-list>
+<app-ticket-list
+  #listaTickets>
+</app-ticket-list>
 
 </div>

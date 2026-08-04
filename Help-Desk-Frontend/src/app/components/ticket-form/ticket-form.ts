@@ -1,45 +1,117 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TicketService } from '../../services/ticket.service';
 import { Ticket } from '../../models/ticket';
 
+
 @Component({
   selector: 'app-ticket-form',
   standalone: true,
-  imports: [FormsModule],
+  imports: [
+    FormsModule
+  ],
   templateUrl: './ticket-form.html',
   styleUrl: './ticket-form.css'
 })
 export class TicketForm {
+@Output() ticketCreado = new EventEmitter<void>();
 
   ticket: Ticket = {
+
     titulo: '',
     descripcion: '',
     categoria: '',
-    prioridad: '',
+    prioridad: 'Media',
     estado: 'Abierto'
   };
 
-  constructor(private ticketService: TicketService) {}
+  constructor(
+    private ticketService: TicketService
+  ) {}
 
-  guardar() {
+  guardar(): void {
 
-    this.ticketService.crearTicket(this.ticket).subscribe(() => {
 
-      alert("Ticket registrado correctamente");
+  // Validar campos obligatorios
+  if (
+    this.ticket.titulo.trim() === '' ||
+    this.ticket.descripcion.trim() === '' ||
+    this.ticket.categoria.trim() === ''
+  ) {
 
-      this.ticket = {
-        titulo: '',
-        descripcion: '',
-        categoria: '',
-        prioridad: '',
-        estado: 'Abierto'
-      };
+    alert('Por favor complete todos los campos obligatorios');
 
-      location.reload();
+    return;
+
+  }
+
+
+  this.ticketService.crearTicket(this.ticket)
+    .subscribe({
+
+      next: (respuesta: Ticket) => {
+
+
+        console.log(
+          'Ticket creado:',
+          respuesta
+        );
+
+
+        alert(
+          'Ticket registrado correctamente'
+        );
+
+
+        this.limpiar();
+        this.ticketCreado.emit();
+
+      },
+
+
+      error: (error: any) => {
+
+
+        console.error(
+          'Error al registrar ticket:',
+          error
+        );
+
+
+        alert(
+          'Error al registrar ticket'
+        );
+
+
+      }
+
 
     });
 
+
+}
+
+
+
+  limpiar(): void {
+
+
+    this.ticket = {
+
+      titulo: '',
+
+      descripcion: '',
+
+      categoria: '',
+
+      prioridad: 'Media',
+
+      estado: 'Abierto'
+
+    };
+
+
   }
+
 
 }

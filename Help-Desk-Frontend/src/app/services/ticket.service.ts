@@ -8,23 +8,34 @@ import { Ticket } from '../models/ticket';
 })
 export class TicketService {
 
-  private apiUrl = 'http://localhost:8080/tickets';
+  private url = 'http://localhost:8080/tickets';
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient
+  ) {}
 
+
+  // Obtener todos los tickets
   getTickets(): Observable<Ticket[]> {
-    return this.http.get<Ticket[]>(this.apiUrl);
+
+    return this.http.get<Ticket[]>(this.url);
+
   }
 
+
+  // Crear un nuevo ticket
   crearTicket(ticket: Ticket): Observable<Ticket> {
-    return this.http.post<Ticket>(this.apiUrl, ticket);
+
+    return this.http.post<Ticket>(this.url, ticket);
+
   }
 
-  actualizarTicket(id: number, ticket: Ticket): Observable<Ticket> {
-    return this.http.put<Ticket>(`${this.apiUrl}/${id}`, ticket);
-  }
 
+  // Eliminar ticket
   eliminarTicket(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+
+    return this.http.delete<void>(`${this.url}/${id}`);
+
   }
+
 }

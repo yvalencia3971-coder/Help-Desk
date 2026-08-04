@@ -1,33 +1,138 @@
 <h2>Registrar Ticket</h2>
 
-<input
-type="text"
-placeholder="Título"
-[(ngModel)]="ticket.titulo">
+<form (ngSubmit)="guardar(); $event.preventDefault()">
 
-<br><br>
 
-<input
-type="text"
-placeholder="Descripción"
-[(ngModel)]="ticket.descripcion">
+  <label>
+    Título:
+  </label>
 
-<br><br>
+  <br>
 
-<input
-type="text"
-placeholder="Categoría"
-[(ngModel)]="ticket.categoria">
+  <input
+    type="text"
+    name="titulo"
+    [(ngModel)]="ticket.titulo"
+    required
+  >
 
-<br><br>
+  <br><br>
 
-<input
-type="text"
-placeholder="Prioridad"
-[(ngModel)]="ticket.prioridad">
 
-<br><br>
+  <label>
+    Descripción:
+  </label>
 
-<button (click)="guardar()">
-Guardar Ticket
-</button>
+  <br>
+
+  <textarea
+    name="descripcion"
+    [(ngModel)]="ticket.descripcion"
+    required>
+  </textarea>
+
+  <br><br>
+
+
+  <label>
+    Categoría:
+  </label>
+
+  <br>
+
+  <select
+    name="categoria"
+    [(ngModel)]="ticket.categoria"
+    required>
+
+    <option value="">
+      Seleccione
+    </option>
+
+    <option value="Hardware">
+      Hardware
+    </option>
+
+    <option value="Software">
+      Software
+    </option>
+
+    <option value="Red">
+      Red
+    </option>
+
+  </select>
+
+
+  <br><br>
+
+
+  <label>
+    Prioridad:
+  </label>
+
+  <br>
+
+  <select
+    name="prioridad"
+    [(ngModel)]="ticket.prioridad">
+
+    <option value="Alta">
+      Alta
+    </option>
+
+    <option value="Media">
+      Media
+    </option>
+
+    <option value="Baja">
+      Baja
+    </option>
+
+  </select>
+
+
+  <br><br>
+
+
+  <label>
+    Estado:
+  </label>
+
+  <br>
+
+  <select
+    name="estado"
+    [(ngModel)]="ticket.estado">
+
+    <option value="Abierto">
+      Abierto
+    </option>
+
+    <option value="En Proceso">
+      En Proceso
+    </option>
+
+    <option value="Resuelto">
+      Resuelto
+    </option>
+
+    <option value="Cerrado">
+      Cerrado
+    </option>
+
+  </select>
+
+
+  <br><br>
+
+
+  <button
+    type="submit">
+
+    Guardar Ticket
+
+  </button>
+
+
+</form>
