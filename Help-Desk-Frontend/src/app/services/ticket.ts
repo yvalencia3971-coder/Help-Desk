@@ -1,9 +1,4 @@
-export interface Ticket {
+import { Service } from '@angular/core';
 
-    id?: number;
-    titulo: string;
-    descripcion: string;
-    categoria: string;
-    estado: string;
-
-}
+@Service()
+export class Ticket {}

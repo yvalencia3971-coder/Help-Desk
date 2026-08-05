@@ -5,132 +5,97 @@ import { Ticket } from '../../models/ticket';
 
 
 @Component({
+
   selector: 'app-ticket-list',
+
   standalone: true,
-  imports: [
+
+  imports:[
     CommonModule
   ],
-  templateUrl: './ticket-list.html',
-  styleUrl: './ticket-list.css'
+
+  templateUrl:'./ticket-list.html',
+
+  styleUrl:'./ticket-list.css'
+
 })
+
+
 export class TicketList implements OnInit {
 
 
-  tickets: Ticket[] = [];
+tickets: Ticket[] = [];
 
 
-  constructor(
-    private ticketService: TicketService
-  ) {}
-
-
-  ngOnInit(): void {
-
-    console.log("TicketList iniciado");
-
-    this.cargarTickets();
-
-  }
+constructor(
+ private ticketService: TicketService
+){}
 
 
 
-  cargarTickets(): void {
+ngOnInit(): void {
 
+ this.cargarTickets();
 
-    console.log("Entró a cargarTickets");
-
-
-    this.ticketService.getTickets()
-      .subscribe({
-
-
-        next: (datos: Ticket[]) => {
-
-
-          console.log("Datos recibidos desde API:", datos);
-
-
-          // Fuerza la actualización de Angular
-          this.tickets = [...datos];
-
-
-          console.log(
-            "Cantidad de tickets en tabla:",
-            this.tickets.length
-          );
-
-
-          console.log(
-            "Tickets guardados en variable:",
-            this.tickets
-          );
-
-
-        },
-
-
-        error: (err: any) => {
-
-
-          console.error(
-            "Error al obtener tickets:",
-            err
-          );
-
-
-        }
-
-
-      });
-
-
-  }
+}
 
 
 
-  eliminarTicket(id: number): void {
+cargarTickets():void{
 
 
-    this.ticketService.eliminarTicket(id)
-      .subscribe({
+this.ticketService.getTickets()
+.subscribe({
+
+next:(datos)=>{
 
 
-        next: () => {
+this.tickets = datos;
 
 
-          alert(
-            "Ticket eliminado correctamente"
-          );
+console.log(
+"Tickets cargados:",
+this.tickets
+);
 
 
-          // Recargar lista después de eliminar
-          this.cargarTickets();
+},
 
 
-        },
+error:(error)=>{
 
 
-        error: (err: any) => {
+console.error(
+"Error cargando tickets:",
+error
+);
 
 
-          console.error(
-            "Error al eliminar ticket:",
-            err
-          );
+}
 
 
-          alert(
-            "Error al eliminar el ticket"
-          );
+});
 
 
-        }
+}
 
 
-      });
+
+eliminarTicket(id:number){
 
 
-  }
+this.ticketService.eliminarTicket(id)
+.subscribe(()=>{
+
+
+this.cargarTickets();
+
+
+});
+
+
+}
+
 
 
 }

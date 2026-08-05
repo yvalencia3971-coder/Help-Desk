@@ -1,138 +1,155 @@
 <h2>Registrar Ticket</h2>
 
-<form (ngSubmit)="guardar(); $event.preventDefault()">
+
+<form (submit)="$event.preventDefault()">
 
 
-  <label>
-    Título:
-  </label>
+<label>
+Título:
+</label>
 
-  <br>
+<br>
 
-  <input
-    type="text"
-    name="titulo"
-    [(ngModel)]="ticket.titulo"
-    required
-  >
-
-  <br><br>
+<input
+type="text"
+name="titulo"
+[(ngModel)]="ticket.titulo"
+>
 
 
-  <label>
-    Descripción:
-  </label>
-
-  <br>
-
-  <textarea
-    name="descripcion"
-    [(ngModel)]="ticket.descripcion"
-    required>
-  </textarea>
-
-  <br><br>
+<br><br>
 
 
-  <label>
-    Categoría:
-  </label>
+<label>
+Descripción:
+</label>
 
-  <br>
+<br>
 
-  <select
-    name="categoria"
-    [(ngModel)]="ticket.categoria"
-    required>
-
-    <option value="">
-      Seleccione
-    </option>
-
-    <option value="Hardware">
-      Hardware
-    </option>
-
-    <option value="Software">
-      Software
-    </option>
-
-    <option value="Red">
-      Red
-    </option>
-
-  </select>
+<textarea
+name="descripcion"
+[(ngModel)]="ticket.descripcion">
+</textarea>
 
 
-  <br><br>
+<br><br>
 
 
-  <label>
-    Prioridad:
-  </label>
+<label>
+Categoría:
+</label>
 
-  <br>
+<br>
 
-  <select
-    name="prioridad"
-    [(ngModel)]="ticket.prioridad">
-
-    <option value="Alta">
-      Alta
-    </option>
-
-    <option value="Media">
-      Media
-    </option>
-
-    <option value="Baja">
-      Baja
-    </option>
-
-  </select>
+<select
+name="categoria"
+[(ngModel)]="ticket.categoria">
 
 
-  <br><br>
+<option value="">
+Seleccione
+</option>
 
 
-  <label>
-    Estado:
-  </label>
-
-  <br>
-
-  <select
-    name="estado"
-    [(ngModel)]="ticket.estado">
-
-    <option value="Abierto">
-      Abierto
-    </option>
-
-    <option value="En Proceso">
-      En Proceso
-    </option>
-
-    <option value="Resuelto">
-      Resuelto
-    </option>
-
-    <option value="Cerrado">
-      Cerrado
-    </option>
-
-  </select>
+<option value="Hardware">
+Hardware
+</option>
 
 
-  <br><br>
+<option value="Software">
+Software
+</option>
 
 
-  <button
-    type="submit">
+<option value="Red">
+Red
+</option>
 
-    Guardar Ticket
 
-  </button>
+</select>
+
+
+<br><br>
+
+
+<label>
+Prioridad:
+</label>
+
+<br>
+
+
+<select
+name="prioridad"
+[(ngModel)]="ticket.prioridad">
+
+
+<option value="Alta">
+Alta
+</option>
+
+
+<option value="Media">
+Media
+</option>
+
+
+<option value="Baja">
+Baja
+</option>
+
+
+</select>
+
+
+<br><br>
+
+
+<label>
+Estado:
+</label>
+
+<br>
+
+
+<select
+name="estado"
+[(ngModel)]="ticket.estado">
+
+
+<option value="Abierto">
+Abierto
+</option>
+
+
+<option value="En Proceso">
+En Proceso
+</option>
+
+
+<option value="Resuelto">
+Resuelto
+</option>
+
+
+<option value="Cerrado">
+Cerrado
+</option>
+
+
+</select>
+
+
+<br><br>
+
+
+<button
+type="button"
+(click)="guardar()">
+
+Guardar Ticket
+
+</button>
 
 
 </form>

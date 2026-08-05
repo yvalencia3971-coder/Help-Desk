@@ -1,17 +1,39 @@
-<div style="width:900px; margin:auto; padding:20px;">
+<div class="contenedor">
 
-  <h1>Sistema Help Desk</h1>
 
-  <hr>
+<h1>
+Universidad Técnica de Manabí
+</h1>
 
- <app-ticket-form
-  (ticketCreado)="listaTickets.cargarTickets()">
+
+<h2>
+Facultad de Ciencias Informáticas
+</h2>
+
+
+<h3>
+Carrera de Tecnologías de la Información
+</h3>
+
+
+<h2>
+Sistema Help Desk
+</h2>
+
+
+<hr>
+
+
+<app-ticket-form
+(ticketCreado)="actualizarLista()">
 </app-ticket-form>
 
-<br>
 
-<app-ticket-list
-  #listaTickets>
+<hr>
+
+
+<app-ticket-list>
 </app-ticket-list>
+
 
 </div>

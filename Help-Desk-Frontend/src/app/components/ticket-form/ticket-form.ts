@@ -14,82 +14,90 @@ import { Ticket } from '../../models/ticket';
   styleUrl: './ticket-form.css'
 })
 export class TicketForm {
-@Output() ticketCreado = new EventEmitter<void>();
+
+
+  @Output() ticketCreado = new EventEmitter<void>();
+
 
   ticket: Ticket = {
 
     titulo: '',
+
     descripcion: '',
+
     categoria: '',
+
     prioridad: 'Media',
+
     estado: 'Abierto'
+
   };
+
 
   constructor(
     private ticketService: TicketService
   ) {}
 
+
   guardar(): void {
 
 
-  // Validar campos obligatorios
-  if (
-    this.ticket.titulo.trim() === '' ||
-    this.ticket.descripcion.trim() === '' ||
-    this.ticket.categoria.trim() === ''
-  ) {
+    if (
+      this.ticket.titulo.trim() === '' ||
+      this.ticket.descripcion.trim() === '' ||
+      this.ticket.categoria.trim() === ''
+    ) {
 
-    alert('Por favor complete todos los campos obligatorios');
+      alert('Complete todos los campos');
 
-    return;
+      return;
+
+    }
+
+
+    this.ticketService.crearTicket(this.ticket)
+      .subscribe({
+
+        next: (respuesta: Ticket) => {
+
+          console.log(
+            'Ticket guardado:',
+            respuesta
+          );
+
+
+          alert(
+            'Ticket registrado correctamente'
+          );
+
+
+          this.limpiar();
+
+
+          this.ticketCreado.emit();
+
+        },
+
+
+        error: (error) => {
+
+          console.error(
+            'Error:',
+            error
+          );
+
+
+          alert(
+            'Error al guardar ticket'
+          );
+
+        }
+
+
+      });
+
 
   }
-
-
-  this.ticketService.crearTicket(this.ticket)
-    .subscribe({
-
-      next: (respuesta: Ticket) => {
-
-
-        console.log(
-          'Ticket creado:',
-          respuesta
-        );
-
-
-        alert(
-          'Ticket registrado correctamente'
-        );
-
-
-        this.limpiar();
-        this.ticketCreado.emit();
-
-      },
-
-
-      error: (error: any) => {
-
-
-        console.error(
-          'Error al registrar ticket:',
-          error
-        );
-
-
-        alert(
-          'Error al registrar ticket'
-        );
-
-
-      }
-
-
-    });
-
-
-}
 
 
 
