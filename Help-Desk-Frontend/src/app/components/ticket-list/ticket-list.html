@@ -1,16 +1,43 @@
-<h2>
-Lista de Tickets
-</h2>
+<h2>Lista de Tickets</h2>
+
+<div class="estadisticas">
 
 
 <p>
-Total de tickets:
+Total:
 {{tickets.length}}
+</p>
+
+
+<p>
+Abiertos:
+{{totalAbiertos}}
+</p>
+
+
+<p>
+En proceso:
+{{totalProceso}}
+</p>
+
+
+<p>
+Resueltos:
+{{totalResueltos}}
+</p>
+
+
+</div>
+
+<p>
+Total de tickets:
+{{ tickets.length }}
 </p>
 
 
 <table 
 class="tabla-tickets"
+border="1"
 *ngIf="tickets.length > 0">
 
 
@@ -19,17 +46,11 @@ class="tabla-tickets"
 <tr>
 
 <th>ID</th>
-
 <th>Título</th>
-
 <th>Descripción</th>
-
 <th>Categoría</th>
-
 <th>Prioridad</th>
-
 <th>Estado</th>
-
 <th>Acción</th>
 
 </tr>
@@ -92,7 +113,6 @@ Eliminar
 
 
 </table>
-
 
 
 <p *ngIf="tickets.length === 0">

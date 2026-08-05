@@ -1,0 +1,53 @@
+form {
+
+  background: #f8f9fa;
+
+  padding: 25px;
+
+  border-radius: 12px;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+
+}
+
+
+
+input,
+textarea,
+select {
+
+  width: 100%;
+
+  padding: 10px;
+
+  border-radius: 6px;
+
+  border: 1px solid #ccc;
+
+}
+
+
+
+button {
+
+  background-color: #6f42c1;
+
+  color: white;
+
+  padding: 10px 20px;
+
+  border:none;
+
+  border-radius:8px;
+
+  cursor:pointer;
+
+}
+
+
+
+button:hover {
+
+  background-color:#512da8;
+
+}

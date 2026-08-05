@@ -1,38 +1,26 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { TicketForm } from './components/ticket-form/ticket-form';
 import { TicketList } from './components/ticket-list/ticket-list';
 
 
 @Component({
 
-  selector: 'app-root',
+selector:'app-root',
 
-  standalone: true,
+standalone:true,
 
-  imports: [
-    TicketForm,
-    TicketList
-  ],
+imports:[
+  TicketForm,
+  TicketList
+],
 
-  templateUrl: './app.html',
+templateUrl:'./app.html',
 
-  styleUrl: './app.css'
+styleUrl:'./app.css'
 
 })
 
 
 export class App {
-
-
-  @ViewChild(TicketList)
-  listaTickets!: TicketList;
-
-
-  actualizarLista(){
-
-    this.listaTickets.cargarTickets();
-
-  }
-
 
 }

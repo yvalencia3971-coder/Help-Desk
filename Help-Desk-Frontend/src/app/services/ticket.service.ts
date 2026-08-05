@@ -13,21 +13,20 @@ export class TicketService {
   private url = 'http://localhost:8080/tickets';
 
 
-  constructor(
-    private http: HttpClient
-  ) {}
-
-
-
-  // Obtener todos los tickets
+// Obtener todos los tickets
   getTickets(): Observable<Ticket[]> {
 
     return this.http.get<Ticket[]>(this.url);
 
   }
 
+  constructor(
+    private http: HttpClient
+  ) {}
 
 
+
+  
   // Crear ticket
   crearTicket(ticket: Ticket): Observable<Ticket> {
 
